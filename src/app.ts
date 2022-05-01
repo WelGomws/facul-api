@@ -9,7 +9,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use("/dev", Routes);
+app.use("/api", Routes);
 
 connection().then(() => {
   const server = app.listen(process.env.PORT, () => {
