@@ -1,9 +1,10 @@
 import { Router } from "express";
 import { controllerLine } from "../controllers";
+import { authentication } from "../middlewares/authentication";
 
 const routes = Router();
 
-routes.post("/", controllerLine.create);
+routes.post("/", authentication, controllerLine.create);
 routes.get("/", controllerLine.get);
 routes.get("/with-stations", controllerLine.getWithStations);
 
