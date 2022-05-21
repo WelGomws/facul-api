@@ -19,7 +19,7 @@ export const signin = async (request: Request, response: Response) => {
 
     const token = await generateToken(user.id);
 
-    return response.status(201).json({ user: removePassword(user), token });
+    return response.status(200).json({ user: removePassword(user), token });
   } catch (error) {
     console.log(error);
   }
