@@ -5,7 +5,12 @@ const create = async (body: bodyRequest) => commentModel.create(body);
 
 const find = async (filter: Filter) => commentModel.find(filter);
 
-const update = async (id: string, active: boolean, stationId: string) =>
+const update = async (
+  id: string,
+  active: boolean,
+  stationId: string,
+  reviewed: boolean
+) =>
   commentModel.updateOne(
     {
       _id: id,
@@ -13,6 +18,7 @@ const update = async (id: string, active: boolean, stationId: string) =>
     {
       active,
       station: stationId,
+      reviewed,
     }
   );
 
