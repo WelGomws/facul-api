@@ -9,6 +9,7 @@ const update = async (
   id: string,
   active: boolean,
   stationId: string,
+  reviewed: boolean
 ) =>
   commentModel.updateOne(
     {
@@ -17,7 +18,7 @@ const update = async (
     {
       active,
       station: stationId,
-      reviewed: false
+      reviewed,
     }
   );
 
